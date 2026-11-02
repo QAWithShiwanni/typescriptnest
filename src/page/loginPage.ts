@@ -11,6 +11,7 @@ export class LoginPage {
     await this.page.locator(this.elUserName).fill(username);
     await this.page.locator(this.elPassword).fill(password);
     await this.page.locator(this.elSubmitBtn).click();
+    // await this.page.waitForLoadState('')
   }
   
 }

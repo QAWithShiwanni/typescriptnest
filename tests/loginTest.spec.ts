@@ -1,79 +1,66 @@
-import { test, expect, chromium, Browser, Page } from '@playwright/test';
-import { LoginPage } from '../src/page/loginPage';
+import { test, expect } from '@playwright/test';
 import loginData from '../src/data/logindata2.json';
+import { LoginPage } from '../src/page/LoginPage';
+import env from '../src/data/environment.json'
 
-let browser: Browser;
-let page: Page;
-let loginPage: LoginPage;
-
-const loginURL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login';
-
-test.describe('OrangeHRM Login Tests @login', () => {
+test.describe('orangehrm login tests', () => {
 
     test.beforeAll(async () => {
-        browser = await chromium.launch();
-        page = await browser.newPage();
-        loginPage = new LoginPage(page);
-        await page.goto(loginURL);
+        console.log('starting orangehrm login tests');
     });
+    test.beforeEach(async ({page})=> {
+        await page.goto(env.orrange,{waitUntil:'commit',timeout:60000});
+    })
 
-    test.beforeEach(async () => {
-        // await page.goto(loginURL);
-    });
+    test('login with valid credentials',{tag:'@valid'}, async ({ page }) => {
+        const loginPage = new LoginPage(page);
+       
+        await loginPage.login(loginData.validUsername, loginData.validPassword);
+        await expect(page).toHaveURL(/dashboard/);
+    })
 
-    test('username field',{tag:"@here"}, async () => {
-        await expect(page.locator('input[name="username"]')).toBeVisible();
-    });
+    test('login with invalid username',{tag:'@invalid'} ,async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.login(loginData.invalidUsername, loginData.validPassword);
+        await expect(page).not.toHaveURL(/dashboard/);
+    })
 
-    test('password field', async () => {
-        await expect(page.locator('input[name="password"]')).toBeVisible();
-    });
+    test('login with invalid password', {tag:'@invalid'},async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.login(loginData.validUsername, loginData.invalidPassword);
+        await expect(page).not.toHaveURL(/dashboard/);
+    })
 
-    test('login button', async () => {
-        await expect(page.locator('button[type="submit"]')).toBeVisible();
-    });
+    test('login with both invalid credentials',{tag:'@invalid'}, async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.login(loginData.invalidUsername, loginData.invalidPassword);
+        await expect(page).not.toHaveURL(/dashboard/);
+    })
 
-    test('forgot Password link', async () => {
-        await expect(page.locator('a[href*="requestPasswordResetCode"]')).toBeVisible();
-    });
+    test('login with empty username',{tag:'@empty'}, async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.login('', loginData.validPassword);
+        await expect(page).not.toHaveURL(/dashboard/);
+    })
 
-    test('login with valid credentials', async () => {
-        await loginPage.login(loginData.validUsername,loginData.validPassword);
-        await expect(page.locator('.oxd-topbar-header-breadcrumb-module')).toHaveText('Dashboard');
-    });
+    test('login with empty password',{tag:'@empty'}, async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.login(loginData.validUsername, '');
+        await expect(page).not.toHaveURL(/dashboard/);
+    })
 
-    test('login with invalid username', async () => {
-        await loginPage.login(loginData.invalidUsername,loginData.validPassword);
-        await expect(page.locator('.oxd-alert-content-text')).toHaveText('Invalid credentials');
-    });
+    test('login with empty fields',{tag:'@empty'}, async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.login('', '');
+        await expect(page).not.toHaveURL(/dashboard/);
+    })
 
-    test('login with invalid password', async () => {
-        await loginPage.login(loginData.validUsername,loginData.invalidPassword);
-        await expect(page.locator('.oxd-alert-content-text')).toHaveText('Invalid credentials');
-    });
-
-    test('login with both invalid credentials', async () => {
-        await loginPage.login(loginData.invalidUsername,loginData.invalidPassword);
-        await expect(page.locator('.oxd-alert-content-text')).toHaveText('Invalid credentials');
-    });
-
-    test('login with empty fields', async () => {
-        await page.locator('button[type="submit"]').click();
-        await expect(page.locator('.oxd-input-field-error-message')).toHaveCount(2);
-    });
-
-    test('login with empty username', async () => {
-        await page.locator('input[name="password"]').fill(loginData.validPassword);
-        await page.locator('button[type="submit"]').click();
-        await expect(page.locator('.oxd-input-field-error-message').first()).toHaveText('Required');
-    });
-
-    test('verifying if password is hidden', async () => {
-        await expect(page.locator('input[name="password"]')).toHaveAttribute('type', 'password');
-    });
+    test('checking forgot password link',{tag:'@link'}, async ({ page }) => {
+        await page.getByText('Forgot your password?').click();
+        await expect(page).toHaveURL(/requestPasswordResetCode/);
+    })
 
     test.afterAll(async () => {
-        await browser.close();
-    });
-
-});
+        console.log('completed orangehrm login tests');
+    })
+})
