@@ -3,7 +3,7 @@ import loginData from '../src/data/logindata2.json';
 import { LoginPage } from '../src/page/LoginPage';
 import env from '../src/data/environment.json'
 
-test.describe('orangehrm login tests', () => {
+test.describe('orangehrm login tests',{tag:'@logintest'}, () => {
 
     test.beforeAll(async () => {
         console.log('starting orangehrm login tests');
