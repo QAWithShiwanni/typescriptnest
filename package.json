@@ -1,19 +1,28 @@
+
 {
   "name": "automation-testing",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:cucumber": "cucumber-js"
-  },
+  "test:chrome": "cross-env BROWSER=chromium cucumber-js --tags \"@orangehrm\"",
+  "test:firefox": "cross-env BROWSER=firefox cucumber-js --tags \"@orangehrm\"",
+  "test:webkit": "cross-env BROWSER=webkit cucumber-js --tags \"@orangehrm\"",
+  "test:all": "npm-run-all test:chrome test:firefox test:webkit"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@cucumber/cucumber": "^13.3.0",
+    "@cucumber/messages": "^34.2.1",
     "@playwright/test": "^1.65.0",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
+    "allure": "^3.33.0",
+    "allure-cucumberjs": "^3.14.0",
+    "cross-env": "^10.1.0",
+    "npm-run-all": "^4.1.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

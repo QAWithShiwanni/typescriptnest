@@ -1,79 +1,124 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import { Browser, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
 import { CustomWorld } from '../src/support/world';
+import { LoginPage } from '../src/page/loginPage';
+import loginData from '../src/data/logindata2.json';
+import env from '../src/data/environment.json';
+
+function getLoginPage(world: CustomWorld) {
+    return new LoginPage(world.page);
+}
 
 Given('the user is on the login page of OrangeHRM',
     async function (this: CustomWorld) {
-        // const browser:Browser
-        console.log(this.page);
-        
-        await this.page.goto('https://opensource-demo.orangehrmlive.com/');
-})
+        const loginPage = getLoginPage(this);
+        await loginPage.openLoginPage(env.orrange);
+    }
+)
 When('the user enters valid username and password',
     async function (this: CustomWorld) {
-        await this.page.getByPlaceholder('Username').fill('Admin');
-        await this.page.getByPlaceholder('Password').fill('admin123');
-})
-When('the user enters {string} and {string}',
-    async function (this: CustomWorld, username: string, password: string) {
-        await this.page.getByPlaceholder('Username').fill(username);
-        await this.page.getByPlaceholder('Password').fill(password);
-})
+        const loginPage = getLoginPage(this);
+        await loginPage.enterUsername(loginData.validUsername);
+        await loginPage.enterPassword(loginData.validPassword);
+    }
+)
+When('the user enters invalid username and invalid password',
+    async function (this: CustomWorld) {
+        const loginPage = getLoginPage(this);
+        await loginPage.enterUsername(loginData.invalidUsername);
+        await loginPage.enterPassword(loginData.invalidPassword);
+    }
+)
+When('the user enters invalid username and valid password',
+    async function (this: CustomWorld) {
+        const loginPage = getLoginPage(this);
+        await loginPage.enterUsername(loginData.invalidUsername);
+        await loginPage.enterPassword(loginData.validPassword);
+    }
+)
+When('the user enters valid username and invalid password',
+    async function (this: CustomWorld) {
+        const loginPage = getLoginPage(this);
+        await loginPage.enterUsername(loginData.validUsername);
+        await loginPage.enterPassword(loginData.invalidPassword);
+    }
+)
 When('click the login button',
     async function (this: CustomWorld) {
-        await this.page.getByRole('button', { name: 'Login' }).click();
-})
+        const loginPage = getLoginPage(this);
+        await loginPage.clickLogin();
+    }
+)
 Then('the user should navigate to dashboard',
     async function (this: CustomWorld) {
         await expect(this.page).toHaveURL(/dashboard/);
-})
-Then('an invalid credential message should appear',
+    }
+)
+Then('an error message should be displayed',
     async function (this: CustomWorld) {
-        await expect(this.page.getByText('Invalid credentials')).toBeVisible();
-})
-When('the user leaves the username field empty',
+        const loginPage = getLoginPage(this);
+        await expect(loginPage.getInvalidMessage()).toHaveText('Invalid credentials');
+    }
+)
+When('the user leaves the username field empty and enters a valid password',
     async function (this: CustomWorld) {
-        await this.page.getByPlaceholder('Username').clear();
-})
-When('enter valid password',
+        const loginPage = getLoginPage(this);
+        await loginPage.clearUsername();
+        await loginPage.enterPassword(loginData.validPassword);
+        await loginPage.clickLogin();
+    }
+)
+Then('the username required message should be displayed',
     async function (this: CustomWorld) {
-        await this.page.getByPlaceholder('Password').fill('admin123');
-})
-Then('the username required message should appear',
+        const loginPage = getLoginPage(this);
+        await expect(loginPage.getRequiredMessages().first()).toHaveText('Required');
+    }
+)
+When('the user enters a valid username and leaves the password field empty',
     async function (this: CustomWorld) {
-      await expect(this.page.locator('.oxd-input-field-error-message').first()).toHaveText('Required');
-})
-When('the user enters valid username',
+        const loginPage = getLoginPage(this);
+        await loginPage.enterUsername(loginData.validUsername);
+        await loginPage.clearPassword();
+        await loginPage.clickLogin();
+    }
+)
+Then('the password required message should be displayed',
     async function (this: CustomWorld) {
-        await this.page.getByPlaceholder('Username').fill('Admin');
-})
-When('leaves the password field empty',
-    async function (this: CustomWorld) {
-     await this.page.getByPlaceholder('Password').clear();
-})
-When('clicks login button',
-    async function (this: CustomWorld) {
-      await this.page.getByRole('button', { name: 'Login' }).click();
-})
-Then('a password required message should appear',
-    async function (this: CustomWorld) {
-      await expect(this.page.locator('.oxd-input-field-error-message').first()).toHaveText('Required');
-})
+        const loginPage = getLoginPage(this);
+        await expect(loginPage.getRequiredMessages().first()).toHaveText('Required');
+    }
+)
 When('the user leaves both username and password fields empty',
     async function (this: CustomWorld) {
-      await this.page.getByPlaceholder('Username').clear();
-      await this.page.getByPlaceholder('Password').clear();
-})
-Then('a required message should appear',
+        const loginPage = getLoginPage(this);
+        await loginPage.clearUsername();
+        await loginPage.clearPassword();
+        await loginPage.clickLogin();
+    }
+)
+Then('the required messages should be displayed for both fields',
     async function (this: CustomWorld) {
-      await expect(this.page.locator('.oxd-input-field-error-message').first()).toHaveText('Required');
-      await expect(this.page.locator('.oxd-input-field-error-message').nth(1)).toHaveText('Required');
-})
-When('the user clicks the forgot password link',
+        const loginPage = getLoginPage(this);
+        const requiredMessages = loginPage.getRequiredMessages();
+        await expect(requiredMessages).toHaveCount(2);
+        await expect(requiredMessages.first()).toHaveText('Required');
+        await expect(requiredMessages.nth(1)).toHaveText('Required');
+    }
+)
+When('the user clicks on the forgot password link',
     async function (this: CustomWorld) {
-      await this.page.getByText('Forgot your password?').click();
-})
-Then('the forgot password page should appear',
+        const loginPage = getLoginPage(this);
+        await loginPage.clickForgotPassword();
+    }
+)
+Then('the user should navigate to the password reset page',
     async function (this: CustomWorld) {
-        await expect(this.page.getByRole('heading', { name: 'Reset Password' })).toBeVisible();
-})
+        await expect(this.page).toHaveURL(/requestPasswordReset/);
+    }
+)
+Then('the reset password page should be displayed',
+    async function (this: CustomWorld) {
+        const loginPage = getLoginPage(this);
+        await expect(loginPage.getResetPasswordHeading()).toBeVisible();
+    }
+)

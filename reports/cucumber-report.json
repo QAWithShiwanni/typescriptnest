@@ -1,0 +1,733 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Login with valid credentials",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 529948500
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4911116799
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 920176399
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "the user enters valid username and password",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:18"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1314573800
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 58446700
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "the user should navigate to dashboard",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:52"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 183831399
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@valid",
+            "line": 8
+          },
+          {
+            "name": "@smoke",
+            "line": 8
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Login with invalid credentials",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 403619000
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3635291199
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 415733000
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "the user enters invalid username and invalid password",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:25"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 714462299
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 548950100
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "an error message should be displayed",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:57"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 94992000
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@invalid",
+            "line": 14
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;login-with-invalid-username-and-valid-password",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Login with invalid username and valid password",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 506382600
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 5015996799,
+              "error_message": "Error: function timed out, ensure the promise resolves within 5000 milliseconds\n    at Timeout.<anonymous> (C:\\Users\\SHIWANNI\\Desktop\\Automation testing\\node_modules\\@cucumber\\cucumber\\src\\time.ts:50:14)\n    at listOnTimeout (node:internal/timers:685:17)\n    at processTimers (node:internal/timers:618:7)"
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 22,
+            "name": "the user enters invalid username and valid password",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:32"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "an error message should be displayed",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:57"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 511927700
+            },
+            "keyword": "After",
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "iVBORw0KGgoAAAANSUhEUgAABQAAAALQCAIAAABAH0oBAAAQAElEQVR4nOzXsQ3AIBAAsVeU/beFhoY9OHsL/3udAQAAgNd9AwAAAAECDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMMAAAFAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJMpGBywAAAEpJREFUAgwAAECCAAMAAJAgwAAAACQIMAAAAAkCDAAAQIIAAwAAkCDAAAAAJAgwAAAACQIMAABAggADAACQIMAAAAAkCDAAAAAJFwAA//9B4EXwAAAABklEQVQDAB7qCIn+bK84AAAAAElFTkSuQmCC",
+                "mime_type": "image/png"
+              }
+            ]
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@invalid",
+            "line": 20
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;login-with-valid-username-and-invalid-password",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Login with valid username and invalid password",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 441823800
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4106049700
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 917498399
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "the user enters valid username and invalid password",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:39"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1209246299
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 401732300
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 30,
+            "name": "an error message should be displayed",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:57"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 89742099
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@invalid",
+            "line": 26
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;login-with-empty-username-and-valid-password",
+        "keyword": "Scenario",
+        "line": 33,
+        "name": "Login with empty username and valid password",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 340161700
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3936755700
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 465148300
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 34,
+            "name": "the user leaves the username field empty and enters a valid password",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:63"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 73204499
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 35,
+            "name": "click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 17253199
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 36,
+            "name": "the username required message should be displayed",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:71"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 145881200
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@empty",
+            "line": 32
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;login-with-valid-username-and-empty-password",
+        "keyword": "Scenario",
+        "line": 39,
+        "name": "Login with valid username and empty password",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 387537300
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2638736799
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 974134500
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "the user enters a valid username and leaves the password field empty",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:77"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 86965299
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 21809999
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "the password required message should be displayed",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:85"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 249828099
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@empty",
+            "line": 38
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;login-with-both-username-and-password-fields-empty",
+        "keyword": "Scenario",
+        "line": 45,
+        "name": "Login with both username and password fields empty",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 394292699
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 3069508099
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 477987699
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "the user leaves both username and password fields empty",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:91"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 65646600
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "click the login button",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 60916499
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 48,
+            "name": "the required messages should be displayed for both fields",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:99"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 125419699
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@empty",
+            "line": 44
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "orangehrm-login-functionality;forgot-password-link-functionality",
+        "keyword": "Scenario",
+        "line": 51,
+        "name": "Forgot password link functionality",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 373398499
+            },
+            "keyword": "Before",
+            "hidden": true
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4898061700
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "the user is on the login page of OrangeHRM",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:12"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1057805800
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 52,
+            "name": "the user clicks on the forgot password link",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:108"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 28977999
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "the user should navigate to the password reset page",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:114"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 331061999
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "the reset password page should be displayed",
+            "match": {
+              "location": "step-definitions\\login.steps.ts:119"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 149772299
+            },
+            "keyword": "After",
+            "hidden": true
+          }
+        ],
+        "tags": [
+          {
+            "name": "@orangehrm",
+            "line": 2
+          },
+          {
+            "name": "@forgotpassword",
+            "line": 50
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "orangehrm-login-functionality",
+    "line": 3,
+    "keyword": "Feature",
+    "name": "OrangeHRM login functionality",
+    "tags": [
+      {
+        "name": "@orangehrm",
+        "line": 2
+      }
+    ],
+    "uri": "features\\login.feature"
+  }
+]

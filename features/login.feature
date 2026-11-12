@@ -11,39 +11,44 @@ Feature: OrangeHRM login functionality
     And click the login button
     Then the user should navigate to dashboard
 
-#   @invalid @regression
-#   Scenario Outline: Login with invalid credentials
-#     When the user enters "<username>" and "<password>"
-#     And click the login button
-#     Then an invalid credential message should appear
+  @invalid
+  Scenario: Login with invalid credentials
+    When the user enters invalid username and invalid password
+    And click the login button
+    Then an error message should be displayed
 
-#     Examples:
-#       | username | password |
-#       | wrong    | admin123 |
-#       | Admin    | wrong123 |
-#       | wrong    | wrong123 |
+  @invalid
+  Scenario: Login with invalid username and valid password
+    When the user enters invalid username and valid password
+    And click the login button
+    Then an error message should be displayed
 
-#   @validation
-#   Scenario: Login with empty username
-#     When the user leaves the username field empty
-#     And enter valid password
-#     And click the login button
-#     Then the username required message should appear
+  @invalid
+  Scenario: Login with valid username and invalid password
+    When the user enters valid username and invalid password
+    And click the login button
+    Then an error message should be displayed
 
-#   @validation
-#   Scenario: Login with empty password
-#     When the user enters valid username
-#     And leaves the password field empty
-#     And clicks login button
-#     Then a password required message should appear
+  @empty
+  Scenario: Login with empty username and valid password
+    When the user leaves the username field empty and enters a valid password
+    And click the login button
+    Then the username required message should be displayed
 
-#   @validation
-#   Scenario: Login with both fields empty
-#     When the user leaves both username and password fields empty
-#     And clicks login button
-#     Then a required message should appear
+  @empty
+  Scenario: Login with valid username and empty password
+    When the user enters a valid username and leaves the password field empty
+    And click the login button
+    Then the password required message should be displayed
 
-#   @forgotpassword
-#   Scenario: Forgot password functionality
-#     When the user clicks the forgot password link
-#     Then the forgot password page should appear
+  @empty
+  Scenario: Login with both username and password fields empty
+    When the user leaves both username and password fields empty
+    And click the login button
+    Then the required messages should be displayed for both fields
+
+  @forgotpassword
+  Scenario: Forgot password link functionality
+    When the user clicks on the forgot password link
+    Then the user should navigate to the password reset page
+    And the reset password page should be displayed
