@@ -6,8 +6,8 @@ export class CustomWorld extends World {
     browser!: Browser;
     context!: BrowserContext;
     page!: Page;
-    loginPage!: LoginPage;
-    adminPage!: AdminPage;
+    testname?: string
+   
     constructor(options: IWorldOptions) {
         super(options);
     }

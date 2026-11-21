@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  "test:dashboard": "cucumber-js --tags \"@dashboard\"",
+"scripts": {
+  "test:dashboard": "cucumber-js features/dashboard.feature",
   "test:chrome": "cross-env BROWSER=chromium cucumber-js --tags \"@orangehrm\"",
   "test:firefox": "cross-env BROWSER=firefox cucumber-js --tags \"@orangehrm\"",
   "test:webkit": "cross-env BROWSER=webkit cucumber-js --tags \"@orangehrm\"",

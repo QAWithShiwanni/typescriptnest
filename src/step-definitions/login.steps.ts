@@ -3,16 +3,23 @@ import { expect } from '@playwright/test';
 import { CustomWorld } from '../support/world';
 import loginData from '../data/logindata2.json';
 import env from '../data/environment.json';
+import { LoginPage } from '../page/loginPage';
 
 Given('the user is on the login page of OrangeHRM', async function (this: CustomWorld) {
-    await this.loginPage.openLoginPage(env.orrange);
+    const page = this.page;
+   const loginPage= new LoginPage(page)
+    await loginPage.openLoginPage(env.orrange);
 })
 When('the user enters valid username and password', async function (this: CustomWorld) {
-    await this.loginPage.enterUsername(loginData.validUsername);
-    await this.loginPage.enterPassword(loginData.validPassword);
+    const page = this.page;
+    const loginPage= new LoginPage(page)
+    await loginPage.enterUsername(loginData.validUsername);
+    await loginPage.enterPassword(loginData.validPassword);
 })
 When('click the login button', async function (this: CustomWorld) {
-    await this.loginPage.clickLogin();
+    const page = this.page;
+    const loginPage= new LoginPage(page)
+    await loginPage.clickLogin();
 })
 Then('the user should navigate to dashboard', async function (this: CustomWorld) {
     await expect(this.page).toHaveURL(/dashboard/);

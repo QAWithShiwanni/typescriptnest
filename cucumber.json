@@ -1,8 +1,10 @@
+
 {
   "default": {
     "formatOptions": {
       "snippetInterface": "async-await"
     },
+    "dryRun": false,
     "requireModule": [
       "ts-node/register"
     ],
@@ -14,10 +16,9 @@
       "features/**/*.feature"
     ],
     "format": [
+      "pretty",
       "html:reports/cucumber-report.html",
-      "json:reports/cucumber-report.json",
-      "progress-bar",
-      "allure-cucumberjs/reporter"
+      "json:reports/cucumber-report.json"
     ],
     "publishQuiet": true
   }

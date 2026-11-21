@@ -4,53 +4,161 @@
     "elements": [
       {
         "description": "",
-        "id": "orangehrm-admin-menu;verify-admin-menu-navigation",
+        "id": "assign-leave-functionality;successfully-assign-leave-to-sam-m",
         "keyword": "Scenario",
         "line": 6,
-        "name": "Verify Admin menu navigation",
+        "name": "Successfully assign leave to Sam M",
         "steps": [
           {
             "result": {
               "status": "passed",
-              "duration": 1055812600
+              "duration": 1911985300
             },
             "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "the user is logged in to OrangeHRM"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "the user clicks the Admin menu"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 8,
-            "name": "the Admin page should be displayed"
+            "hidden": true,
+            "embeddings": [
+              {
+                "data": "U3VjY2Vzc2Z1bGx5LWFzc2lnbi1sZWF2ZS10by1TYW0tTQ==",
+                "mime_type": "text/x.cucumber.log+plain"
+              }
+            ]
           },
           {
             "result": {
               "status": "passed",
-              "duration": 3031043800
+              "duration": 7104322600
+            },
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "Admin is logged into OrangeHRM",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:8"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 15973190099
+            },
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "Admin opens Assign Leave from Quick Launch",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:15"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 11819850700,
+              "error_message": "locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByText('Sam M', { exact: true }).last()\u001b[22m\n\n    at CustomWorld.<anonymous> (C:\\Users\\SHIWANNI\\Desktop\\Automation testing\\src\\step-definitions\\leave.steps.ts:26:61)"
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "Admin selects employee \"Sam M\"",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:24"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "Admin selects leave type \"US - Vacation\"",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:28"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "Admin enters the leave dates",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:38"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "Admin enters the comments \"Automation Testing\"",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:43"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "Admin clicks Assign",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:46"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "Leave should be assigned successfully",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:49"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "the assigned leaveshould appear in Leave List",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:54"
+            }
+          },
+          {
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            },
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the leave details should match the entered data",
+            "match": {
+              "location": "src\\step-definitions\\leave.steps.ts:58"
+            }
+          },
+          {
+            "result": {
+              "status": "failed",
+              "duration": 1226380899,
+              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at CustomWorld.<anonymous> (C:\\Users\\SHIWANNI\\Desktop\\Automation testing\\src\\support\\hooks.ts:22:48)"
             },
             "keyword": "After",
             "hidden": true
@@ -58,941 +166,22 @@
         ],
         "tags": [
           {
-            "name": "@admin",
-            "line": 1
+            "name": "@assignLeave",
+            "line": 5
           },
           {
-            "name": "@ADM_001",
+            "name": "@positive",
             "line": 5
           }
         ],
         "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-admin-menu;verify-user-search",
-        "keyword": "Scenario",
-        "line": 10,
-        "name": "Verify user search",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1108088099
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "the user is logged in to OrangeHRM"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 11,
-            "name": "the user is on the Admin page"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 12,
-            "name": "the user searches for an existing username"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 13,
-            "name": "the matching user should be displayed"
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 3218585199
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@admin",
-            "line": 1
-          },
-          {
-            "name": "@ADM_002",
-            "line": 9
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-admin-menu;verify-search-with-invalid-username",
-        "keyword": "Scenario",
-        "line": 15,
-        "name": "Verify search with invalid username",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 960015999
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "the user is logged in to OrangeHRM"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 16,
-            "name": "the user is on the Admin page"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 17,
-            "name": "the user searches for a non-existing username"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 18,
-            "name": "the no records found message should be displayed"
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 3599063599
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@admin",
-            "line": 1
-          },
-          {
-            "name": "@ADM_003",
-            "line": 14
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-admin-menu;verify-user-role-filter",
-        "keyword": "Scenario",
-        "line": 20,
-        "name": "Verify user role filter",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 950470900
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "the user is logged in to OrangeHRM"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 21,
-            "name": "the user is on the Admin page"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 22,
-            "name": "the user selects a user role and searches"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 23,
-            "name": "users belonging to the selected role should be displayed"
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 3823955900
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@admin",
-            "line": 1
-          },
-          {
-            "name": "@ADM_004:",
-            "line": 19
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-admin-menu;verify-reset-functionality",
-        "keyword": "Scenario",
-        "line": 25,
-        "name": "Verify Reset functionality",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1170457000
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 4,
-            "name": "the user is logged in to OrangeHRM"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 26,
-            "name": "the user is on the Admin page"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 27,
-            "name": "the user enters search filters and clicks Reset"
-          },
-          {
-            "result": {
-              "status": "undefined",
-              "duration": 0
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 28,
-            "name": "all search fields should return to default values"
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 3805084300
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@admin",
-            "line": 1
-          },
-          {
-            "name": "@ADM_005",
-            "line": 24
-          }
-        ],
-        "type": "scenario"
       }
     ],
-    "id": "orangehrm-admin-menu",
-    "line": 2,
+    "id": "assign-leave-functionality",
+    "line": 1,
     "keyword": "Feature",
-    "name": "OrangeHRM Admin Menu",
-    "tags": [
-      {
-        "name": "@admin",
-        "line": 1
-      }
-    ],
-    "uri": "features\\admin.feature"
-  },
-  {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "orangehrm-dashboard-testing;verify-dashboard-page-loads",
-        "keyword": "Scenario",
-        "line": 12,
-        "name": "Verify dashboard page loads",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 936864399
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 5527342300
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 6,
-            "name": "the user is on the login page of OrangeHRM",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:7"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1933757399
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "the user enters valid username and password",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:10"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 6262279800
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 8,
-            "name": "click the login button",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:14"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 76339699
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "the user should navigate to dashboard",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:17"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 12044199
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 13,
-            "name": "the user navigates to Dashboard",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:5"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1492931499
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 14,
-            "name": "the dashboard page should load successfully",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:9"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 801537300
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@orangehrm",
-            "line": 1
-          },
-          {
-            "name": "@dashboard",
-            "line": 1
-          },
-          {
-            "name": "@DASH_001",
-            "line": 11
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-dashboard-testing;verify-dashboard-widgets",
-        "keyword": "Scenario",
-        "line": 17,
-        "name": "Verify dashboard widgets",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1140046900
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 4783964800
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 6,
-            "name": "the user is on the login page of OrangeHRM",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:7"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 558156000
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "the user enters valid username and password",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:10"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 157591699
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 8,
-            "name": "click the login button",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:14"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1542249900
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "the user should navigate to dashboard",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:17"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 2437299
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 18,
-            "name": "the user checks the dashboard widgets",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:12"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 499046699
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 19,
-            "name": "the dashboard widgets should be displayed correctly",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:15"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 998009899
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@orangehrm",
-            "line": 1
-          },
-          {
-            "name": "@dashboard",
-            "line": 1
-          },
-          {
-            "name": "@DASH_002",
-            "line": 16
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-dashboard-testing;verify-time-at-work-section",
-        "keyword": "Scenario",
-        "line": 22,
-        "name": "Verify Time at Work section",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1297764499
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 5219374200
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 6,
-            "name": "the user is on the login page of OrangeHRM",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:7"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 920432899
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "the user enters valid username and password",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:10"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1299418700
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 8,
-            "name": "click the login button",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:14"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 85797599
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "the user should navigate to dashboard",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:17"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1581200
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 23,
-            "name": "the user checks the Time at Work section",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:20"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 556434000
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 24,
-            "name": "the Time at Work widget should be displayed correctly",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:23"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 915656300
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@orangehrm",
-            "line": 1
-          },
-          {
-            "name": "@dashboard",
-            "line": 1
-          },
-          {
-            "name": "@DASH_003",
-            "line": 21
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-dashboard-testing;verify-quick-launch-options",
-        "keyword": "Scenario",
-        "line": 27,
-        "name": "Verify Quick Launch options",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 899046699
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 3895983399
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 6,
-            "name": "the user is on the login page of OrangeHRM",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:7"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 963518199
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "the user enters valid username and password",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:10"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 39106799
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 8,
-            "name": "click the login button",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:14"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1172622400
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "the user should navigate to dashboard",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:17"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 21399654699
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 28,
-            "name": "the user clicks each Quick Launch option",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:27"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 29696100
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 29,
-            "name": "the user should navigate to the corresponding pages",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:55"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 536802100
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@orangehrm",
-            "line": 1
-          },
-          {
-            "name": "@dashboard",
-            "line": 1
-          },
-          {
-            "name": "@DASH_004",
-            "line": 26
-          }
-        ],
-        "type": "scenario"
-      },
-      {
-        "description": "",
-        "id": "orangehrm-dashboard-testing;verify-dashboard-refresh",
-        "keyword": "Scenario",
-        "line": 32,
-        "name": "Verify dashboard refresh",
-        "steps": [
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1115024999
-            },
-            "keyword": "Before",
-            "hidden": true
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 3679130999
-            },
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 6,
-            "name": "the user is on the login page of OrangeHRM",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:7"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 981542399
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 7,
-            "name": "the user enters valid username and password",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:10"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 81808099
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 8,
-            "name": "click the login button",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:14"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 1507320600
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 9,
-            "name": "the user should navigate to dashboard",
-            "match": {
-              "location": "src\\step-definitions\\login.steps.ts:17"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 525339599
-            },
-            "arguments": [],
-            "keyword": "When ",
-            "line": 33,
-            "name": "the user refreshes the dashboard",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:58"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 906928400
-            },
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 34,
-            "name": "the dashboard should reload successfully",
-            "match": {
-              "location": "src\\step-definitions\\dashboard.steps.ts:61"
-            }
-          },
-          {
-            "result": {
-              "status": "passed",
-              "duration": 653909200
-            },
-            "keyword": "After",
-            "hidden": true
-          }
-        ],
-        "tags": [
-          {
-            "name": "@orangehrm",
-            "line": 1
-          },
-          {
-            "name": "@dashboard",
-            "line": 1
-          },
-          {
-            "name": "@DASH_005",
-            "line": 31
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "orangehrm-dashboard-testing",
-    "line": 3,
-    "keyword": "Feature",
-    "name": "OrangeHRM Dashboard Testing",
-    "tags": [
-      {
-        "name": "@orangehrm",
-        "line": 1
-      },
-      {
-        "name": "@dashboard",
-        "line": 1
-      }
-    ],
-    "uri": "features\\dashboard.feature"
+    "name": "Assign leave functionality",
+    "tags": [],
+    "uri": "features\\leave.feature"
   }
 ]

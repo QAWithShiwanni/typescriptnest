@@ -1,19 +1,20 @@
-import { Before, After, Status, setDefaultTimeout } from '@cucumber/cucumber';
-import { chromium } from '@playwright/test';
+import { Before, After, Status, setDefaultTimeout, ITestCaseHookParameter } from '@cucumber/cucumber';
+import { chromium, ConsoleMessage } from '@playwright/test';
 import { CustomWorld } from './world';
-import { LoginPage } from '../page/loginPage';
-import { AdminPage } from '../page/adminPage';
 
 setDefaultTimeout(30 * 1000);
-Before(async function (this: CustomWorld) {
+Before(async function (this: CustomWorld,{pickle}:ITestCaseHookParameter) {
     this.browser = await chromium.launch({
         headless: false
     })
     this.context = await this.browser.newContext();
     locale: 'en-US';
     this.page = await this.context.newPage();
-    this.loginPage = new LoginPage(this.page);
-    this.adminPage = new AdminPage(this.page);
+    this.page.on('console',async (msg:ConsoleMessage) => {
+        if(msg.type() == 'log') await this.attach(msg.text());
+    });
+    this.testname = pickle.name.replace(/\W/g,'-')
+    this.log(this.testname)
 })
 After(async function (this: CustomWorld, scenario) {
     try {
