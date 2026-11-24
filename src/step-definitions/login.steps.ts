@@ -6,9 +6,12 @@ import env from '../data/environment.json';
 import { LoginPage } from '../page/loginPage';
 
 Given('the user is on the login page of OrangeHRM', async function (this: CustomWorld) {
+    console.log("Step 1 started");
     const page = this.page;
-   const loginPage= new LoginPage(page)
+    const loginPage = new LoginPage(page);
+    console.log("Opening URL:", env.orrange);
     await loginPage.openLoginPage(env.orrange);
+    console.log("Login page opened successfully");
 })
 When('the user enters valid username and password', async function (this: CustomWorld) {
     const page = this.page;

@@ -1,0 +1,10 @@
+{
+    "employeeName": "Sam M",
+    "firstName": "Sam",
+    "lastName": "M",
+    "leaveType": "US - Vacation",
+    "entitlementDays": 10,
+    "comments": "Automation testing - Assign Leave",
+    "fromDate": "2026-12-01",
+    "toDate": ""
+}

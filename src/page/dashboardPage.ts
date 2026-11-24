@@ -5,8 +5,11 @@ export class DashboardPage {
         page = this.page;
     }
 
-    public readonly elAssignLeaveBtn = `Assign Leave`
-
+    public readonly elAssignLeaveBtn = `Assign Leave`;
+    public readonly elMenuDashboard = `Dashboard`;
+    public readonly elLeaveList=`Leave List`;
+    public readonly elMenuLeave=`Leave`;
+  
   async quickLaunchOptionClick(option?:string) {
     // await this.page.getByRole("button",{})
     await this.page.getByTitle(this.elAssignLeaveBtn).first().click();
@@ -17,6 +20,12 @@ export class DashboardPage {
     }
     // await this.page.click()
   }
-    
+    async menuNavigation(menu:string) {
+      if(menu.includes(`dashboard`)) {
+        await this.page.click(this.elMenuDashboard)
+      } else if(menu.includes(`leave`)) {
+        await this.page.click(this.elMenuLeave)
+      }
+    }
 
 }
